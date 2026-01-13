@@ -1,7 +1,22 @@
+const AppState = {
+  RUNNING: "Running",
+  PAUSED: "Paused",
+};
+
 let intervalId;
 
+const renderPage = () => {
+  const appState = localStorage.getItem("app_state");
+  if (appState === AppState.RUNNING) {
+    displayDivStartStopwatch();
+    intervalId = setInterval(updateWatch, 100);
+  } else {
+    renderWatch();
+  }
+};
+
 const onLoad = () => {
-  renderWatch();
+  renderPage();
 };
 
 window.onload = onLoad;
@@ -12,6 +27,7 @@ const displayDivStartStopwatch = () => {
 };
 
 const startStopwatch = () => {
+  localStorage.setItem("app_state", AppState.RUNNING);
   displayDivStartStopwatch();
   const running_total_milliseconds =
     localStorage.getItem("running_total_milliseconds") || 0;
@@ -30,6 +46,7 @@ const displayDivRunningStopwatch = () => {
 };
 
 const pauseStopwatch = () => {
+  localStorage.setItem("app_state", AppState.PAUSED);
   displayDivRunningStopwatch();
   clearInterval(intervalId);
 };
@@ -37,7 +54,7 @@ const pauseStopwatch = () => {
 document.getElementById("btnPause").addEventListener("click", pauseStopwatch);
 
 const reset = () => {
-  if (window.confirm("Are you sure you want to reset your clock?")) {
+  if (window.confirm("Are you sure you want to reset the clock?")) {
     pauseStopwatch();
     localStorage.clear();
     renderWatch();
