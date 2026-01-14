@@ -31,7 +31,6 @@
         id="divStartStopwatch"
         style="
           display: flex;
-          flex-direction: column;
           align-items: center;
           max-height: 60dvh;
           max-width: 70dvw;
@@ -40,9 +39,13 @@
         <img
           id="btnStart"
           src="unlocked.png"
-          width="100%"
-          height="80%"
-          object-fit="cover"
+          style="
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+          "
         />
       </div>
 
@@ -50,7 +53,6 @@
         id="divRunningStopwatch"
         style="
           display: none;
-          flex-direction: column;
           align-items: center;
           max-height: 60dvh;
           max-width: 70dvw;
@@ -59,9 +61,13 @@
         <img
           id="btnPause"
           src="locked.png"
-          width="100%"
-          height="80%"
-          object-fit="cover"
+          style="
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+          "
         />
       </div>
     </div>
