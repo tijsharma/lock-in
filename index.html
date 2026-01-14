@@ -29,16 +29,40 @@
 
       <div
         id="divStartStopwatch"
-        style="display: flex; flex-direction: column; align-items: center"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-height: 60dvh;
+          max-width: 70dvw;
+        "
       >
-        <img id="btnStart" src="unlocked.png" width="250px" />
+        <img
+          id="btnStart"
+          src="unlocked.png"
+          width="100%"
+          height="80%"
+          object-fit="cover"
+        />
       </div>
 
       <div
         id="divRunningStopwatch"
-        style="display: none; flex-direction: column; align-items: center"
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          max-height: 60dvh;
+          max-width: 70dvw;
+        "
       >
-        <img id="btnPause" src="locked.png" width="250px" />
+        <img
+          id="btnPause"
+          src="locked.png"
+          width="100%"
+          height="80%"
+          object-fit="cover"
+        />
       </div>
     </div>
   </body>
